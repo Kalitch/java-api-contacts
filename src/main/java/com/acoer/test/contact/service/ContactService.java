@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.stereotype.Service;
 
 import com.acoer.test.contact.domain.Contact;
+import com.acoer.test.contact.repository.ContactRepository;
 
 @Service
 public class ContactService implements ICrudOperations<Contact> {
@@ -19,35 +20,42 @@ public class ContactService implements ICrudOperations<Contact> {
 	private static final Logger logger = LogManager.getLogger();
 	
 	@Autowired
-	private MongoOperations mongoOps;
+	private ContactRepository contactRepository;
 
 	@Override
-	public List<Contact> getAll() {
-		// TODO Add the implementation code
-		return null;
+	public List<Contact> getAll() {		
+		return contactRepository.findAll();		 
 	}
 
 	@Override
-	public List<Contact> search(String searchTerm) {
-		// TODO Add the implementation code
-		return null;
+	public Contact search(String searchTerm) {		 
+		return  this.contactRepository.findById(searchTerm).orElseThrow(() -> new IllegalArgumentException("No contact found with id: " + searchTerm));
 	}
 
 	@Override
-	public Contact add(Contact item) {
-		// TODO Add the implementation code
-		return null;
+	public List<Contact> findByPhoneNumber(String phoneNumber) {
+		 return contactRepository.findByPhoneNumber(phoneNumber);
+		 
+	}
+	@Override
+	public List<Contact> find(String search){
+		return this.contactRepository.multiFieldSearch(search);
+
 	}
 
 	@Override
-	public Contact update(Contact item) {
-		// TODO Add the implementation code
-		return null;
+	public Contact add(Contact item) {		  
+		return this.contactRepository.save(item);
 	}
 
 	@Override
-	public void delete(Contact item) {
-		// TODO Add the implementation code
+	public Contact update(Contact item) {		
+		return this.contactRepository.save(item);
+	}
+
+	@Override
+	public void delete(Contact item) {		 
+		this.contactRepository.delete(item);
 
 	}
 
