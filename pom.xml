@@ -79,6 +79,13 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugins>
+    		<plugin>
+    		    <groupId>com.smartling.cc4j</groupId>
+    		    <artifactId>conventional-commits-maven-plugin</artifactId>
+    		    <version>${version}</version>
+    		</plugin>
+</plugins>
 		</plugins>
 	</build>
 

@@ -34,3 +34,4 @@ build/
 
 ### Maven ###
 .mvn/
+.node_modules/

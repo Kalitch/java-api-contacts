@@ -22,6 +22,8 @@ public class Contact implements Comparable<Contact> {
 	  
 	public String code;
 
+	 
+
 	@Override
 	public int compareTo(Contact o) {
 		return this.firstName.compareTo(o.firstName);

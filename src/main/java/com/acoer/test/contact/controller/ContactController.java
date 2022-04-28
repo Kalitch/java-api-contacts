@@ -88,9 +88,10 @@ public class ContactController {
 		logger.info("Deleting contact");
 		Contact find = contactService.search(id);
 		if (find.phoneNumber == null) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);		}
-		contactService.delete(contactService.search(id));
-		return new ResponseEntity("Contact deleted",HttpStatus.OK);
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		contactService.delete(find);
+		return new ResponseEntity("Contact deleted", HttpStatus.OK);
 	}
 
 	// update
@@ -98,7 +99,7 @@ public class ContactController {
 	@ApiOperation(value = "Update a contact", notes = "Update a contact")
 	public ResponseEntity<Contact> updateContact(@PathVariable("id") String id, @RequestBody Contact contact) {
 		logger.info("Updating contact");
-		if (contact.phoneNumber == null || contact.id == null) {			 
+		if (contact.phoneNumber == null || contact.id == null) {
 			return new ResponseEntity("To update a contact, you must provide a valid id and phone number",
 					HttpStatus.NOT_FOUND);
 		}
@@ -108,7 +109,8 @@ public class ContactController {
 				Contact result = contactService.update(contact);
 				return new ResponseEntity<>(result, HttpStatus.OK);
 			} else {
-				return new ResponseEntity("Phone number already exists or the given id is incorrect", HttpStatus.CONFLICT);			 
+				return new ResponseEntity("Phone number already exists or the given id is incorrect",
+						HttpStatus.CONFLICT);
 
 			}
 		} else if (find.size() > 1) {
