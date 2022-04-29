@@ -1,0 +1,2 @@
+- name: Conventional Commits (dkhunt27)
+  uses: dkhunt27/action-conventional-commits@v1.1.0
