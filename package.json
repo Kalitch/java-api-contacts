@@ -1,0 +1,33 @@
+{
+  "name": "java-api-contacts",
+  "version": "1.0.0",
+  "description": "The project has a simple Java project structure with the following packages (in **src/main/java**)",
+  "main": "commitlint.config.js",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "dependencies": {
+    "git-commit-msg-linter": "^4.1.2",
+    "maven": "^5.0.0",
+    "mvn": "^3.5.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.4",
+    "husky": "^7.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kalitch/java-api-contacts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kalitch/java-api-contacts/issues"
+  },
+  "homepage": "https://github.com/Kalitch/java-api-contacts#readme"
+}
