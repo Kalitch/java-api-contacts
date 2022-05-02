@@ -29,7 +29,7 @@ public class ContactController {
 
 	private static final Logger logger = LogManager.getLogger();
 
-	// getall
+	// getall v2
 	@RequestMapping(method = RequestMethod.GET, value = "/list", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ApiOperation(value = "Get all contacts", notes = "Get all contacts")
 	public ResponseEntity<List<Contact>> getContacts() {
