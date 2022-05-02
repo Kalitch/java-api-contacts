@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "The project has a simple Java project structure with the following packages (in **src/main/java**)",
   "main": "commitlint.config.js",
+  
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
@@ -15,10 +16,11 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.4",
+    "cz-conventional-changelog": "^3.3.0",
     "husky": "^7.0.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+     "commit": "git-cz"
   },
   "repository": {
     "type": "git",
@@ -29,5 +31,10 @@
   "bugs": {
     "url": "https://github.com/Kalitch/java-api-contacts/issues"
   },
-  "homepage": "https://github.com/Kalitch/java-api-contacts#readme"
+  "homepage": "https://github.com/Kalitch/java-api-contacts#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
