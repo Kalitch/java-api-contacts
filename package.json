@@ -1,6 +1,6 @@
 {
   "name": "java-api-contacts",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "The project has a simple Java project structure with the following packages (in **src/main/java**)",
   "main": "commitlint.config.js",
   "husky": {
