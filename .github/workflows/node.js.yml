@@ -27,11 +27,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-<<<<<<< HEAD
-  
-=======
     
->>>>>>> 51ad4f143ec12223290464493833bd0164e4c169
   
   publish:
     runs-on: ubuntu-latest
