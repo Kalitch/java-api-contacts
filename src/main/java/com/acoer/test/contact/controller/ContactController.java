@@ -53,20 +53,20 @@ public class ContactController {
 	}
 
 	// search [ID ONLY]
-	/*
-	 * @RequestMapping(method = RequestMethod.GET, value = "/search/{id}", produces
-	 * = MediaType.APPLICATION_JSON_VALUE)
-	 * 
-	 * @ApiOperation(value = "Search a contact", notes = "Search a contact")
-	 * public ResponseEntity<Contact> searchContact(@PathVariable("id") String id) {
-	 * logger.info("Searching contact");
-	 * Contact result = contactService.search(id);
-	 * if(result == null) {
-	 * return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	 * }
-	 * return new ResponseEntity<>( result, HttpStatus.OK);
-	 * }
-	 */
+	
+	  @RequestMapping(method = RequestMethod.GET, value = "/search/{id}", produces
+	  = MediaType.APPLICATION_JSON_VALUE)
+	  
+	  @ApiOperation(value = "Search a contact", notes = "Search a contact")
+	  public ResponseEntity<Contact> searchContact(@PathVariable("id") String id) {
+	  logger.info("Searching contact");
+	  Contact result = contactService.search(id);
+	  if(result == null) {
+	  return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	  }
+	  return new ResponseEntity<>( result, HttpStatus.OK);
+	  }
+	
 
 	// search [ID & PHONE NUMBER & FIRST NAME & LAST NAME]
 	@RequestMapping(method = RequestMethod.GET, value = "/search/{value}", produces = MediaType.APPLICATION_JSON_VALUE)
