@@ -3,7 +3,6 @@
   "version": "1.2.0",
   "description": "The project has a simple Java project structure with the following packages (in **src/main/java**)",
   "main": "commitlint.config.js",
-  
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
