@@ -1,43 +1,44 @@
 {
-  "name": "java-api-contacts",
-  "version": "2.0.0",
-  "description": "The project has a simple Java project structure with the following packages (in **src/main/java**)",
+  "name": "circleci",
+  "version": "1.13.2",
+  "description": "",
   "main": "commitlint.config.js",
-  
+  "release": {
+    "branches": [
+      "master"
+    ]
+  },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "dependencies": {
-    "git-commit-msg-linter": "^4.1.2",
-    "maven": "^5.0.0",
-    "mvn": "^3.5.0"
+    "git-commit-msg-linter": "4.1.2",
+    "maven": "5.0.0",
+    "mocha": "^10.0.0",
+    "mvn": "3.5.0",
+    "node": "^17.7.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.2.4",
-    "@semantic-release/npm": "^9.0.1",
-    "cz-conventional-changelog": "^3.3.0",
-    "husky": "^7.0.4",
+    "@commitlint/cli": "16.2.4",
+    "@semantic-release/changelog": "^6.0.1",
+    "husky": "7.0.4",
     "semantic-release": "^19.0.2"
   },
   "scripts": {
-    "commit": "git-cz",
+    "test": "mocha",
     "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kalitch/java-api-contacts.git"
+    "url": "https://github.com/kalitch/java-api-contacts.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Kalitch/java-api-contacts/issues"
-  },
-  "homepage": "https://github.com/Kalitch/java-api-contacts#readme",
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
+  "author": "Acoer",
+  "publishConfig": {
+    "access": "public"
   }
+  
+   
+   
 }

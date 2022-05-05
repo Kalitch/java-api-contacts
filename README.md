@@ -1,6 +1,6 @@
-# Structure
+# Structure 
 
-The project has a simple Java project structure with the following packages (in **src/main/java**) 
+The project has a simple Java project structure with the following packages (in **src/main/java**)
 
 * **com.acoer.test.contact:** This is the main package, classes directly in this package should not be touched.
 * **com.acoer.test.contact.controller:** Contains the controller side of the MVC pattern that processes  the RESTful requests
@@ -27,3 +27,5 @@ This is a standard SpringBoot application, you can run it by executing the follo
 ```
 ./mvnw spring-boot:run
 ```
+
+

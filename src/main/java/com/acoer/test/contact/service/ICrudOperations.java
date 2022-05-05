@@ -2,8 +2,6 @@ package com.acoer.test.contact.service;
 
 import java.util.List;
 
-import com.acoer.test.contact.domain.Contact;
-
 public interface ICrudOperations<T> {
 
 	/**
@@ -19,7 +17,7 @@ public interface ICrudOperations<T> {
 	 * @param searchTerm
 	 * @return
 	 */
-	public T search(String searchTerm);
+	public List<T> search(String searchTerm);
 
 	/**
 	 * Adds a new item to the DB
@@ -43,18 +41,4 @@ public interface ICrudOperations<T> {
 	 * @param item
 	 */
 	public void delete(T item);
-
-	/**
-	 * Returns items matching the phoneNumber
-	 * 
-	 * @return
-	 */
-	public List<T> findByPhoneNumber(String phoneNumber);
-
-	/**
-	 * Returns items matching the phoneNumber
-	 * 
-	 * @return
-	 */
-	public List<T> find(String find);
 }

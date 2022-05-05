@@ -1,0 +1,24 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.5
+  commitlint: conventional-changelog/commitlint@1.0.0
+  semantic-release: proxyco/semantic-release@4.0.0
+jobs:
+  release:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages # Install and automatically cache packages
+      # Run optional required steps before releasing
+      # - run: npm run build-script
+      - run: npm run semantic-release
+
+workflows:
+  test_and_release:
+    # Run the test jobs first, then the release only when all the test jobs are successful
+    jobs:       
+      - semantic-release/release:          
+          attach_project: false 
+          debug: true
+             
+       
